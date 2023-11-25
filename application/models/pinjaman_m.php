@@ -402,7 +402,7 @@ class Pinjaman_m extends CI_Model {
 		}
 	}
 
-	//data Bunga
+	//data Infaq
 	function get_data_bunga() {
 		$this->db->select('*');
 		$this->db->from('suku_bunga');

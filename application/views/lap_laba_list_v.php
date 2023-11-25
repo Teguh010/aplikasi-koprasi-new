@@ -109,7 +109,7 @@
 	</tr>
 	<tr>
 		<td class="h_tengah"> 3 </td>
-		<td> Pendapatan Biaya Bunga</td>
+		<td> Pendapatan Biaya Infaq</td>
 		<td class="h_kanan">
 			<?php
 				$bunga = $jml_bunga->jml_total; 
