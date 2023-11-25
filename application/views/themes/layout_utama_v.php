@@ -2,8 +2,8 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title><?php echo $judul_browser;?> - SisKoMob</title>
-	<link rel="shortcut icon" href="<?php echo base_url(); ?>icon.ico" type="image/x-icon" />
+	<title><?php echo $judul_browser;?> - KTM</title>
+	<link rel="shortcut icon" href="<?= base_url('assets/theme_admin/img/main-logo.png') ?>" type="image/x-icon" />
 	<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 	<!-- bootstrap 3.0.2 -->
 	<link href="<?php echo base_url(); ?>assets/theme_admin/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -54,7 +54,7 @@
 	<header class="header">
 		<a href="<?php echo site_url();?>" class="logo">
 			<!-- Add the class icon to your logo image or logo icon to add the margining -->
-			SisKoMob
+			Sistem Koprasi Mandiri
 		</a>
 		<!-- Header Navbar: style can be found in header.less -->
 		<nav class="navbar navbar-static-top" role="navigation">

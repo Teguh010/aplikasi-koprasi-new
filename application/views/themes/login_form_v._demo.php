@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Login-SIFOR KOPJAM</title>
-	<link rel="shortcut icon" href="<?php echo base_url(); ?>icon.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href="<?= base_url('assets/theme_admin/img/main-logo.png') ?>" type="image/x-icon" />
 	<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 	<!-- bootstrap 3.0.2 -->
 	<link href="<?php echo base_url(); ?>assets/theme_admin/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -35,11 +35,11 @@
 				<strong><i class="fa fa-user"></i> Anggota (fitur baru)</strong><br />
 				Username: 50<br />
 				Password: demo<br />
-				Catatan - cara login anggota klik pada tulisan Member Login dibawah<br /><br />
+				Catatan - cara login anggota klik pada main-logo Member Login dibawah<br /><br />
 
 			</p>
 		</div>	
-		<div class="header"><img height='60' src="<?php echo base_url().'assets/theme_admin/img/tulisan.png'; ?>"></div>
+		<div class="header"><img height='60' src="<?php echo base_url().'assets/theme_admin/img/main-logo.png'; ?>"></div>
 		<form action="" method="post">
 			<div class="body bg-gray">
 				<?php if($jenis == 'member') { ?>

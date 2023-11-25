@@ -1,30 +1,35 @@
 <?php
-if(!isset($_SESSION)) { session_start(); } ob_start();
+if (!isset($_SESSION)) {
+	session_start();
+}
+ob_start();
 $this->load->helper('cookie');
-function destroyCookies($prefix){
-  if(isset($_COOKIE)){
-    foreach($_COOKIE as $i => $v){
-      if(preg_match("/^$prefix/", $i)){
-        //setcookie($i, '', time()-(1*24*60*60*1000)); unset($_COOKIE[$i]);
-        //echo $i.'<br>';
-      	delete_cookie($i);
-      }
-    }
-
-  }
+function destroyCookies($prefix)
+{
+	if (isset($_COOKIE)) {
+		foreach ($_COOKIE as $i => $v) {
+			if (preg_match("/^$prefix/", $i)) {
+				//setcookie($i, '', time()-(1*24*60*60*1000)); unset($_COOKIE[$i]);
+				//echo $i.'<br>';
+				delete_cookie($i);
+			}
+		}
+	}
 }
 destroyCookies('hidden_sorting_');
 ob_end_flush();
-?><!DOCTYPE html>
+?>
+<!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="UTF-8">
-	<title><?php echo $this->load->get_section('judul_browser');?> - SisKoMob</title>
-	<link rel="shortcut icon" href="<?php echo base_url(); ?>icon.ico" type="image/x-icon" />
+	<title><?php echo $this->load->get_section('judul_browser'); ?> - KTM</title>
+	<link rel="shortcut icon" href="<?= base_url('assets/theme_admin/img/main-logo.png') ?>" type="image/x-icon" />
 	<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 
-	<?php 
-	foreach($css_files as $file): ?>
+	<?php
+	foreach ($css_files as $file) : ?>
 		<link type="text/css" rel="stylesheet" href="<?php echo $file; ?>" />
 	<?php endforeach; ?>
 
@@ -41,7 +46,7 @@ ob_end_flush();
 
 	<!-- jQuery 2.0.2 -->
 	<script src="<?php echo base_url(); ?>assets/theme_admin/js/jquery.min.js"></script>
-	<?php foreach($js_files as $file): ?>
+	<?php foreach ($js_files as $file) : ?>
 		<script src="<?php echo $file; ?>"></script>
 	<?php endforeach; ?>
 
@@ -53,12 +58,13 @@ ob_end_flush();
 	 <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
 	 <![endif]-->
 </head>
+
 <body class="skin-blue">
 	<!-- header logo: style can be found in header.less -->
 	<header class="header">
-		<a href="<?php echo site_url();?>" class="logo">
+		<a href="<?php echo site_url(); ?>" class="logo">
 			<!-- Add the class icon to your logo image or logo icon to add the margining -->
-			 SisKoMob
+			SISKOM
 		</a>
 		<!-- Header Navbar: style can be found in header.less -->
 		<nav class="navbar navbar-static-top" role="navigation">
@@ -76,11 +82,11 @@ ob_end_flush();
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 							<i class="glyphicon glyphicon-user"></i>
-							<span><?php echo $this->load->get_section('u_name');?> <i class="caret"></i></span>
+							<span><?php echo $this->load->get_section('u_name'); ?> <i class="caret"></i></span>
 						</a>
 						<ul class="dropdown-menu">
-							<li><a href="<?php echo base_url();?>ubah_password"> <i class="fa fa-key"></i>Ubah Password</a></li>
-							<li><a href="<?php echo base_url();?>login/logout"> <i class="fa fa-sign-out"></i>Logout</a></li>
+							<li><a href="<?php echo base_url(); ?>ubah_password"> <i class="fa fa-key"></i>Ubah Password</a></li>
+							<li><a href="<?php echo base_url(); ?>login/logout"> <i class="fa fa-sign-out"></i>Logout</a></li>
 						</ul>
 					</li>
 				</ul>
@@ -89,7 +95,7 @@ ob_end_flush();
 	</header>
 	<div class="wrapper row-offcanvas row-offcanvas-left">
 		<!-- Left side column. contains the logo and sidebar -->
-		<aside class="left-side sidebar-offcanvas">                
+		<aside class="left-side sidebar-offcanvas">
 			<!-- sidebar: style can be found in sidebar.less -->
 			<section class="sidebar">
 				<!-- Sidebar user panel -->
@@ -101,16 +107,16 @@ ob_end_flush();
 		</aside>
 
 		<!-- Right side column. Contains the navbar and content of the page -->
-		<aside class="right-side">                
+		<aside class="right-side">
 			<!-- Content Header (Page header) -->
 			<section class="content-header">
 				<h1>
-					<?php echo $this->load->get_section('judul_utama');?> 
-					<small> <?php echo $this->load->get_section('judul_sub');?> </small>
+					<?php echo $this->load->get_section('judul_utama'); ?>
+					<small> <?php echo $this->load->get_section('judul_sub'); ?> </small>
 				</h1>
 				<ol class="breadcrumb">
-					<li> 
-						<i class="fa fa-calendar"></i> <?php echo date('d M Y'); ?> &nbsp; 
+					<li>
+						<i class="fa fa-calendar"></i> <?php echo date('d M Y'); ?> &nbsp;
 						<i class="fa fa-clock-o"></i> <?php echo date('H:i'); ?>
 					</li>
 				</ol>
@@ -118,9 +124,9 @@ ob_end_flush();
 
 			<!-- Main content -->
 			<section class="content">
-				<?php echo $this->load->get_section('sebelum_gc_list');?> 
+				<?php echo $this->load->get_section('sebelum_gc_list'); ?>
 				<?php echo $output; ?>
-				<?php echo $this->load->get_section('setelah_gc_list');?> 
+				<?php echo $this->load->get_section('setelah_gc_list'); ?>
 			</section><!-- /.content -->
 		</aside><!-- /.right-side -->
 	</div><!-- ./wrapper -->
@@ -133,4 +139,5 @@ ob_end_flush();
 	<script src="<?php echo base_url(); ?>assets/theme_admin/js/AdminLTE/app.js" type="text/javascript"></script>
 
 </body>
+
 </html>
